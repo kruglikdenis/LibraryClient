@@ -4,6 +4,7 @@ require_once ("Common/Connector.php") ;
 
 use Common\Connector ;
 
+session_start();
 
 Connector::connectAllFilesInDirectory("Entities") ;
 

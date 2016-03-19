@@ -35,7 +35,12 @@
     <div class="bg-overlay"></div>
 
     <div id="authentification" class="conteiner-authorized">
-        <input type="button" class="btn btn-default btn-authorized" data-toggle="modal" data-target="#modalLogin" value="Login"/>
+
+        {if !isset($smarty.session.userLogin)}
+            <input type="button" class="btn btn-default btn-authorized" data-toggle="modal" data-target="#modalLogin" value="Login"/>
+        {else}
+            {$smarty.session.userLogin} <a id="btnLogout" href="#"> Выйти </a>
+        {/if}
     </div>
 
     {include file="views/partial/inc_modal_login.tpl" }
