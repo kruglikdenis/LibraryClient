@@ -1,0 +1,22 @@
+.conteiner-authorized{
+    position: fixed;
+    right:0px;
+    padding: 10px;
+}
+
+.btn-authorized{
+    background-color: rgb(216,170,70);
+    background-clip: border-box;
+    color: white;
+}
+
+.text-head-login {
+    color: rgb(216, 170, 70);
+    font-size: 30px;
+    font-family: "Blackadder ITC";
+    font-weight: 100;
+}
+
+.form-control{
+    margin-bottom: 0px;
+}

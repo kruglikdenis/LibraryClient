@@ -1,27 +1,30 @@
 <?php
 require 'smarty/libs/Smarty.class.php';
+require_once ("Common/Connector.php") ;
+
+use Common\Connector ;
 
 
-header('Content-Type: text/plain; charset=utf-8');
+Connector::connectAllFilesInDirectory("Entities") ;
 
+$smarty = new Smarty;
 
-include 'Annotation.php';
-//$smarty = new Smarty;
+$smarty->display("views/index.tpl");
 
-//$smarty->display("index.html");
+/*
+use Entities\Role ;
 
 try {
-    $client = new SoapClient('http://localhost:64659/Realization/AnnotationController.svc?wsdl',array("trace" => 1, "exceptions" => 0));
-    $entity = new DalAnnotation();
-    $entity->Id = 1;
-    $entity->BookId = 1;
-    $entity->AuthorId = 1;
+    $client = new SoapClient('http://localhost:64659/Realization/RoleController.svc?wsdl',array("trace" => 1, "exceptions" => 0));
+    $role = new Role();
+    $role->setId(3);
+    $role->setName(4);
 
-    $client->CreateAnnotation(array("annotation"=>$entity));
-    print $client->CreateAnnotationResult;
+    $client->CreateRole(array("role"=>$role));
 
 } catch (Exception $e) {
 
     print 'Caught exception: '.  $e->getMessage(). "\n";
 
 }
+*/

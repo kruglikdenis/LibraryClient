@@ -1,27 +1,3 @@
-<?php
-/* Smarty version 3.1.30-dev/57, created on 2016-03-17 15:33:09
-  from "E:\Job\htdocs\htdocs\LibraryClient\index.html" */
-
-/* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.30-dev/57',
-  'unifunc' => 'content_56eac0257aed34_34353626',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '19adc787f07b04a48278eec2d71663d9e9d85485' => 
-    array (
-      0 => 'E:\\Job\\htdocs\\htdocs\\LibraryClient\\index.html',
-      1 => 1414410924,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl) {
-?>
 <!DOCTYPE html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -30,7 +6,7 @@ function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl)
 <head>
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-    <title>Circle by templatemo</title>
+    <title>Circle</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- 
@@ -39,16 +15,15 @@ function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl)
     -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/templatemo_misc.css">
-    <link rel="stylesheet" href="css/templatemo_style.css">
+    <link rel="stylesheet" href="views/css/bootstrap.min.css">
+    <link rel="stylesheet" href="views/css/normalize.min.css">
+    <link rel="stylesheet" href="views/css/font-awesome.min.css">
+    <link rel="stylesheet" href="views/css/animate.css">
+    <link rel="stylesheet" href="views/css/templatemo_misc.css">
+    <link rel="stylesheet" href="views/css/templatemo_style.css">
+    <link rel="stylesheet" href="views/css/main.css">
 
-    <?php echo '<script'; ?>
- src="js/vendor/modernizr-2.6.2.min.js"><?php echo '</script'; ?>
->
+    <script src="views/js/vendor/modernizr-2.6.2.min.js"></script>
 	<!-- templatemo 410 circle -->
 </head>
 <body>
@@ -59,6 +34,12 @@ function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl)
     
     <div class="bg-overlay"></div>
 
+    <div id="authentification" class="conteiner-authorized">
+        <input type="button" class="btn btn-default btn-authorized" data-toggle="modal" data-target="#modalLogin" value="Login"/>
+    </div>
+
+    {include file="views/partial/inc_modal_login.tpl" }
+
     <div class="container-fluid">
         <div class="row">
             
@@ -67,8 +48,8 @@ function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl)
                     
                     <div class="logo-wrapper">
                         <h1 class="logo">
-                            <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_410_circle"><img src="images/logo.png" alt="Circle Template">
-                            <span>Free HTML5 Template</span></a>
+                            <a rel="nofollow" href="#"><img src="views/images/logo.png" alt="Circle Template">
+                            </a>
                         </h1>
                     </div> <!-- /.logo-wrapper -->
                     
@@ -78,7 +59,7 @@ function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl)
                             <li><a class="show-1" href="#">About</a></li>
                             <li><a class="show-2" href="#">Services</a></li>
                             <li><a class="show-3" href="#">Gallery</a></li>
-                            <li><a class="show-4" href="#" onclick="templatemo_map();">Contact</a></li>
+                            <li><a class="show-4" href="#">Contact</a></li>
                             <li><a rel="nofollow" href="http://www.google.com">External Link</a></li>
                         </ul> <!-- /.menu -->
                         <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
@@ -139,7 +120,7 @@ function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl)
                             <div class="col-md-4 col-sm-4">
                                 <div class="member-item">
                                     <div class="thumb">
-                                        <img src="images/team/member-1.jpg" alt="Tracy - Web Designer">
+                                        <img src="views/images/team/member-1.jpg" alt="Tracy - Web Designer">
                                     </div>
                                     <h4>Tracy</h4>
                                     <span>Web Designer</span>
@@ -148,7 +129,7 @@ function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl)
                             <div class="col-md-4 col-sm-4">
                                 <div class="member-item">
                                     <div class="thumb">
-                                        <img src="images/team/member-2.jpg" alt="Mary - Web Developer">
+                                        <img src="views/images/team/member-2.jpg" alt="Mary - Web Developer">
                                     </div>
                                     <h4>Mary</h4>
                                     <span>Web Developer</span>
@@ -157,7 +138,7 @@ function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl)
                             <div class="col-md-4 col-sm-4">
                                 <div class="member-item">
                                     <div class="thumb">
-                                        <img src="images/team/member-3.jpg" alt="Julia - Creative Director">
+                                        <img src="views/images/team/member-3.jpg" alt="Julia - Creative Director">
                                     </div>
                                     <h4>Julia</h4>
                                     <span>Creative Director</span>
@@ -212,71 +193,71 @@ function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl)
                             
                             <div class="col-md-4 col-ms-6">
                                 <div class="g-item">
-                                    <img src="images/gallery/g1.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="images/gallery/g1.jpg">
+                                    <img src="views/images/gallery/g1.jpg" alt="">
+                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g1.jpg">
                                         <span>+</span>
                                     </a>
                                 </div> <!-- /.g-item -->
                             </div> <!-- /.col-md-4 -->
                             <div class="col-md-4 col-ms-6">
                                 <div class="g-item">
-                                    <img src="images/gallery/g2.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="images/gallery/g2.jpg">
+                                    <img src="views/images/gallery/g2.jpg" alt="">
+                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g2.jpg">
                                         <span>+</span>
                                     </a>
                                 </div> <!-- /.g-item -->
                             </div> <!-- /.col-md-4 -->
                             <div class="col-md-4 col-ms-6">
                                 <div class="g-item">
-                                    <img src="images/gallery/g3.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="images/gallery/g3.jpg">
+                                    <img src="views/images/gallery/g3.jpg" alt="">
+                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g3.jpg">
                                         <span>+</span>
                                     </a>
                                 </div> <!-- /.g-item -->
                             </div> <!-- /.col-md-4 -->
                             <div class="col-md-4 col-ms-6">
                                 <div class="g-item">
-                                    <img src="images/gallery/g4.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="images/gallery/g4.jpg">
+                                    <img src="views/images/gallery/g4.jpg" alt="">
+                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g4.jpg">
                                         <span>+</span>
                                     </a>
                                 </div> <!-- /.g-item -->
                             </div> <!-- /.col-md-4 -->
                             <div class="col-md-4 col-ms-6">
                                 <div class="g-item">
-                                    <img src="images/gallery/g5.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="images/gallery/g5.jpg">
+                                    <img src="views/images/gallery/g5.jpg" alt="">
+                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g5.jpg">
                                         <span>+</span>
                                     </a>
                                 </div> <!-- /.g-item -->
                             </div> <!-- /.col-md-4 -->
                             <div class="col-md-4 col-ms-6">
                                 <div class="g-item">
-                                    <img src="images/gallery/g6.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="images/gallery/g6.jpg">
+                                    <img src="views/images/gallery/g6.jpg" alt="">
+                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g6.jpg">
                                         <span>+</span>
                                     </a>
                                 </div> <!-- /.g-item -->
                             </div> <!-- /.col-md-4 -->
                             <div class="col-md-4 col-ms-6">
                                 <div class="g-item">
-                                    <img src="images/gallery/g7.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="images/gallery/g7.jpg">
+                                    <img src="views/images/gallery/g7.jpg" alt="">
+                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g7.jpg">
                                         <span>+</span>
                                     </a>
                                 </div> <!-- /.g-item -->
                             </div> <!-- /.col-md-4 -->
                             <div class="col-md-4 col-ms-6">
                                 <div class="g-item">
-                                    <img src="images/gallery/g8.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="images/gallery/g8.jpg">
+                                    <img src="views/images/gallery/g8.jpg" alt="">
+                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g8.jpg">
                                         <span>+</span>
                                     </a>
                                 </div> <!-- /.g-item -->
                             </div> <!-- /.col-md-4 -->
                             <div class="col-md-4 col-ms-6">
                                 <div class="g-item">
-                                    <img src="images/gallery/g9.jpg" alt="">
+                                    <img src="views/images/gallery/g9.jpg" alt="">
                                     <a data-rel="lightbox" class="overlay" href="images/gallery/g9.jpg">
                                         <span>+</span>
                                     </a>
@@ -297,12 +278,7 @@ function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl)
                                     <br><strong>Email:</strong> info@company.com | <strong>Tel:</strong> 010-020-0340</p>
                                 </div>
                             </div> <!-- /.col-md-12 -->
-                            
-                            <div class="col-md-12">
-                                <div class="google-map">
-                                </div> <!-- /.google-map -->
-                            </div> <!-- /.col-md-12 -->
-                            
+
                             <div class="col-md-12">
                                 <div class="contact-form">
                                     <div class="row">
@@ -339,33 +315,20 @@ function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl)
     <div class="container-fluid">   
         <div class="row">
             <div class="col-md-12 footer">
-                <p id="footer-text">Copyright &copy; 2084 <a href="#">Company Name</a>
-                 | Photos by <a rel="nofollow" href="http://unsplash.com">Unsplash</a></p>
+                <p id="footer-text">Copyright &copy; 2016 <a href="#">Circle</a>
             </div><!-- /.footer --> 
         </div>
     </div> <!-- /.container-fluid -->
 
-    <?php echo '<script'; ?>
- src="js/vendor/jquery-1.10.1.min.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
->window.jQuery || document.write('<?php echo '<script'; ?>
- src="js/vendor/jquery-1.10.1.min.js"><\/script>')<?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="js/jquery.easing-1.3.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="js/bootstrap.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="js/plugins.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="js/main.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- type="text/javascript">
+    <script src="views/js/vendor/jquery-1.10.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="views/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+    <script src="views/js/jquery.easing-1.3.js"></script>
+    <script src="views/js/bootstrap.js"></script>
+    <script src="views/js/plugins.js"></script>
+    <script src="views/js/main.js"></script>
+    <script src="views/js/main-usobility.js"></script>
+    <script src="js/ajax-services.js"></script>
+    <script type="text/javascript">
             
 			jQuery(function ($) {
 
@@ -380,49 +343,22 @@ function content_56eac0257aed34_34353626 (Smarty_Internal_Template $_smarty_tpl)
                     slide_links: 'blank', // Individual links for each slide (Options: false, 'num', 'name', 'blank')
                     slides: [ // Slideshow Images
                         {
-                            image: 'images/templatemo-slide-1.jpg'
+                            image: 'views/images/templatemo-slide-1.jpg'
                         }, {
-                            image: 'images/templatemo-slide-2.jpg'
+                            image: 'views/images/templatemo-slide-2.jpg'
                         }, {
-                            image: 'images/templatemo-slide-3.jpg'
+                            image: 'views/images/templatemo-slide-3.jpg'
                         }, {
-                            image: 'images/templatemo-slide-4.jpg'
+                            image: 'views/images/templatemo-slide-4.jpg'
                         }
                     ]
 
                 });
             });
             
-    <?php echo '</script'; ?>
->
-    
-    	<!-- Google Map -->
-        <?php echo '<script'; ?>
- src="http://maps.google.com/maps/api/js?sensor=true"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- src="js/vendor/jquery.gmap3.min.js"><?php echo '</script'; ?>
->
-        
-        <!-- Google Map Init-->
-        <?php echo '<script'; ?>
- type="text/javascript">
-           function templatemo_map() {
-                $('.google-map').gmap3({
-                    marker:{
-                        address: '16.8496189,96.1288854' 
-                    },
-                        map:{
-                        options:{
-                        zoom: 15,
-                        scrollwheel: false,
-                        streetViewControl : true
-                        }
-                    }
-                });
-            }
-        <?php echo '</script'; ?>
->
+    </script>
+
+        <script src="views/js/vendor/jquery.gmap3.min.js"></script>
+
 </body>
-</html><?php }
-}
+</html>
