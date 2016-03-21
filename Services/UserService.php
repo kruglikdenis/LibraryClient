@@ -3,6 +3,8 @@
 require_once ("Interfaces/IUserService.php");
 require_once ("SoapService.php");
 
+use Entities\User;
+
 class UserService implements IUserService
 {
     private $client;
@@ -17,6 +19,13 @@ class UserService implements IUserService
         $role = new \Entities\Role("User") ;
         $responce = $this->client->GetUserByLoginAndPassword(["login"=>$login,"pass"=>$password,"role" => $role]);
         return (isset($responce->GetUserByLoginAndPasswordResult)) ?
-            new \Entities\User($responce->GetUserByLoginAndPasswordResult) : null;
+            new User($responce->GetUserByLoginAndPasswordResult) : null;
+    }
+
+    public function Create(User $user)
+    {
+        $responce = $this->client->Create(["user" => $user]) ;
+        var_dump( $responce);
+
     }
 }

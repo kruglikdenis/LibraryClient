@@ -15,7 +15,8 @@
     -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet">
 
-    <link rel="stylesheet" href="views/css/bootstrap.min.css">
+    <link href="views/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="views/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="views/css/normalize.min.css">
     <link rel="stylesheet" href="views/css/font-awesome.min.css">
     <link rel="stylesheet" href="views/css/animate.css">
@@ -38,12 +39,14 @@
 
         {if !isset($smarty.session.userLogin)}
             <input type="button" class="btn btn-default btn-authorized" data-toggle="modal" data-target="#modalLogin" value="Login"/>
+            <input type="button" class="btn btn-default btn-authorized" data-toggle="modal" data-target="#modalRegister" value="Registration"/>
         {else}
             {$smarty.session.userLogin} <a id="btnLogout" href="#"> Выйти </a>
         {/if}
     </div>
 
     {include file="views/partial/inc_modal_login.tpl" }
+    {include file="views/partial/inc_modal_register.tpl" }
 
     <div class="container-fluid">
         <div class="row">
@@ -325,10 +328,11 @@
         </div>
     </div> <!-- /.container-fluid -->
 
-    <script src="views/js/vendor/jquery-1.10.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="views/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+    <script type="text/javascript" src="views/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="views/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="views/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
     <script src="views/js/jquery.easing-1.3.js"></script>
-    <script src="views/js/bootstrap.js"></script>
+    <script src="views/js/bootstrap-datetimepicker.min.js"></script>
     <script src="views/js/plugins.js"></script>
     <script src="views/js/main.js"></script>
     <script src="views/js/main-usobility.js"></script>

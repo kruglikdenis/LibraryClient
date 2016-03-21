@@ -12,9 +12,10 @@
                     <br/>
                     <input class="form-control" type="password" name="password" placeholder="Password"/>
                 </form>
+                    <p id="login_error" class="text-danger" style="display: none;"></p>
             </div>
             <div class="modal-footer">
-                <button id="btnLogin" type="button" class="btn btn-default btn-authorized">Login</button>
+                <button id="btnLogin" type="button" class="btn btn-default btn-authorized">Sing In</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>

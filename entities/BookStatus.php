@@ -4,7 +4,7 @@ namespace Entities {
 
     class BookStatus
     {
-        public $StatusOfBook ;
+        private $StatusOfBook ;
         private $Id;
 
         public function setId($id)

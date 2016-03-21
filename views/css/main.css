@@ -8,15 +8,23 @@
     background-color: rgb(216,170,70);
     background-clip: border-box;
     color: white;
+    font-family: "Bell MT";
 }
 
 .text-head-login {
     color: rgb(216, 170, 70);
     font-size: 30px;
-    font-family: "Blackadder ITC";
+    font-family: "Bell MT";
     font-weight: 100;
+    margin:5px;
 }
 
 .form-control{
     margin-bottom: 0px;
+}
+
+.text-danger{
+    color:red;
+    margin-bottom: 0px;
+    font-size: 15px;
 }

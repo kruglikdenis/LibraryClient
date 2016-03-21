@@ -1,28 +1,15 @@
 <?php
 
-require_once ("Services/UserService.php");
-require_once ("Common/Connector.php");
+require_once("Services/UserService.php");
+require_once("Common/Connector.php");
 
 \Common\Connector::connectAllFilesInDirectory("Entities");
+\Common\Connector::connectAllFilesInDirectory("Controllers");
 
 session_start();
 
-switch ($_REQUEST["method"]) {
+$controller = new $_REQUEST["controller"]();
 
-    case "login":
-        $userService = new UserService() ;
-        $user = $userService->GetUserByLoginAndPassword($_REQUEST["login"],$_REQUEST["password"]);
-        if(isset($user)){
-            $_SESSION["userLogin"] = $user->getLogin();
-            echo json_encode(['isLogin'=>true]);
-        }else{
-            echo json_encode(['isLogin'=>false, "message"=>"Неверный логин или пароль"]);
-        }
-        break;
+$execute = $_REQUEST["action"];
 
-    case "logout":
-        unset($_SESSION["userLogin"]);
-        echo json_encode(['isLogout'=>true]);
-        break;
-
-}
+$controller->$execute();
