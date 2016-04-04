@@ -12,14 +12,19 @@ namespace Entities {
         private $DateOfBirdth;
         private $Id;
 
-        public function __construct($params)
+        public function __construct($params = array())
         {
+            $this->Id = 0;
             $properties = get_object_vars($this);
             foreach($properties as $keyProperty => $property){
                 if (isset($params->$keyProperty)){
                     $this->$keyProperty = $params->$keyProperty;
                 }
             }
+        }
+
+        public function getObjectVars(){
+            return get_object_vars($this);
         }
 
         public function setId($id)

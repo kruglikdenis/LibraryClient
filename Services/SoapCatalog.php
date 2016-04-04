@@ -5,6 +5,7 @@ class SoapCatalog
 {
     private static $catalog = [
         "User" => "http://localhost:64659/Realization/UserController.svc?wsdl",
+        "Book" => "http://localhost:64659/Realization/BookController.svc?wsdl",
     ];
 
     public static function getUrlByClass($class){

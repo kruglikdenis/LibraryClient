@@ -4,11 +4,17 @@ require_once ("Common/Connector.php") ;
 
 use Common\Connector ;
 
+Connector::connectAllFilesInDirectory("Entities");
+Connector::connectAllFilesInDirectory("Controllers");
+Connector::connectAllFilesInDirectory("Services");
+
 session_start();
 
-Connector::connectAllFilesInDirectory("Entities") ;
-
 $smarty = new Smarty;
+
+$bookService = new BookService();
+
+$books = $bookService->GetAllBookEntities();
 
 $smarty->display("views/index.tpl");
 
