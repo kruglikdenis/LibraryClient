@@ -14,6 +14,7 @@ class UserController implements IUserController
         $user = $userService->GetUserByLoginAndPassword($_REQUEST["login"],$_REQUEST["password"]);
         if(isset($user)){
             $_SESSION["userLogin"] = $user->getLogin();
+            $_SESSION["user"] = serialize($user);
             echo json_encode(['isLogin'=>true]);
         }else{
             echo json_encode(['isLogin'=>false, "message"=>"Неверный логин или пароль"]);

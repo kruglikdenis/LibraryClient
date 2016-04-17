@@ -48,6 +48,7 @@
     {include file="views/partial/inc_modal_login.tpl" }
     {include file="views/partial/inc_modal_register.tpl" }
 
+
     <div class="container-fluid">
         <div class="row">
             
@@ -63,12 +64,10 @@
                     
                     <div class="menu-wrapper">
                         <ul class="menu">
-                            <li><a class="homebutton" href="#">Home</a></li>
-                            <li><a class="show-1" href="#">About</a></li>
+                            <li><a class="show-1" href="#">Мои книги</a></li>
                             <li><a class="show-2" href="#">Services</a></li>
-                            <li><a class="show-3" href="#">Gallery</a></li>
-                            <li><a class="show-4" href="#">Contact</a></li>
-                            <li><a rel="nofollow" href="http://www.google.com">External Link</a></li>
+                            <li><a class="show-3" href="#">Библиотека</a></li>
+                            <li><a class="show-4" href="#">Предложение</a></li>
                         </ul> <!-- /.menu -->
                         <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
                     </div> <!-- /.menu-wrapper -->
@@ -196,122 +195,9 @@
                         </div> <!-- /.row -->
                     </div> <!-- /.services -->
 
-                    <div id="menu-3" class="gallery content">
-                        <div class="row">
-                            
-                            <div class="col-md-4 col-ms-6">
-                                <div class="g-item">
-                                    <img src="views/images/gallery/g1.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g1.jpg">
-                                        <span>+</span>
-                                    </a>
-                                </div> <!-- /.g-item -->
-                            </div> <!-- /.col-md-4 -->
-                            <div class="col-md-4 col-ms-6">
-                                <div class="g-item">
-                                    <img src="views/images/gallery/g2.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g2.jpg">
-                                        <span>+</span>
-                                    </a>
-                                </div> <!-- /.g-item -->
-                            </div> <!-- /.col-md-4 -->
-                            <div class="col-md-4 col-ms-6">
-                                <div class="g-item">
-                                    <img src="views/images/gallery/g3.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g3.jpg">
-                                        <span>+</span>
-                                    </a>
-                                </div> <!-- /.g-item -->
-                            </div> <!-- /.col-md-4 -->
-                            <div class="col-md-4 col-ms-6">
-                                <div class="g-item">
-                                    <img src="views/images/gallery/g4.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g4.jpg">
-                                        <span>+</span>
-                                    </a>
-                                </div> <!-- /.g-item -->
-                            </div> <!-- /.col-md-4 -->
-                            <div class="col-md-4 col-ms-6">
-                                <div class="g-item">
-                                    <img src="views/images/gallery/g5.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g5.jpg">
-                                        <span>+</span>
-                                    </a>
-                                </div> <!-- /.g-item -->
-                            </div> <!-- /.col-md-4 -->
-                            <div class="col-md-4 col-ms-6">
-                                <div class="g-item">
-                                    <img src="views/images/gallery/g6.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g6.jpg">
-                                        <span>+</span>
-                                    </a>
-                                </div> <!-- /.g-item -->
-                            </div> <!-- /.col-md-4 -->
-                            <div class="col-md-4 col-ms-6">
-                                <div class="g-item">
-                                    <img src="views/images/gallery/g7.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g7.jpg">
-                                        <span>+</span>
-                                    </a>
-                                </div> <!-- /.g-item -->
-                            </div> <!-- /.col-md-4 -->
-                            <div class="col-md-4 col-ms-6">
-                                <div class="g-item">
-                                    <img src="views/images/gallery/g8.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="views/images/gallery/g8.jpg">
-                                        <span>+</span>
-                                    </a>
-                                </div> <!-- /.g-item -->
-                            </div> <!-- /.col-md-4 -->
-                            <div class="col-md-4 col-ms-6">
-                                <div class="g-item">
-                                    <img src="views/images/gallery/g9.jpg" alt="">
-                                    <a data-rel="lightbox" class="overlay" href="images/gallery/g9.jpg">
-                                        <span>+</span>
-                                    </a>
-                                </div> <!-- /.g-item -->
-                            </div> <!-- /.col-md-4 -->
+                    {include file="views/partial/inc_books.tpl"}
+                    {include file="views/partial/inc_suggest.tpl" }
 
-                        </div> <!-- /.row -->
-                    </div> <!-- /.gallery -->
-
-                    <div id="menu-4" class="contact content">
-                        <div class="row">
-                        	
-                            <div class="col-md-12">
-                                <div class="toggle-content text-center spacing">
-                                    <h3>Contact Us</h3>
-                                    <p>Donec mattis enim sit amet nisl faucibus, eu pulvinar nibh facilisis. Aliquam erat volutpat. Vivamus tempus, nisi varius imperdiet molestie, velit mi feugiat felis, sit amet fringilla mi massa sit amet arcu. Mauris dictum nisl id felis lacinia congue. Aliquam lectus nisi, sodales in lacinia quis, lobortis vel sem.
-                                    <br><br><strong>Address:</strong> 123 Thamine Street, Digital Estate, Yangon 10620, Myanmar
-                                    <br><strong>Email:</strong> info@company.com | <strong>Tel:</strong> 010-020-0340</p>
-                                </div>
-                            </div> <!-- /.col-md-12 -->
-
-                            <div class="col-md-12">
-                                <div class="contact-form">
-                                    <div class="row">
-                                    	<form action="#" method="post">
-                                            <fieldset class="col-md-4">
-                                                <input id="name" type="text" name="name" placeholder="Name">
-                                            </fieldset>
-                                            <fieldset class="col-md-4">
-                                                <input type="email" name="email" id="email" placeholder="Email">
-                                            </fieldset>
-                                            <fieldset class="col-md-4">
-                                                <input type="text" name="subject" id="subject" placeholder="Subject">
-                                            </fieldset>
-                                            <fieldset class="col-md-12">
-                                                <textarea name="message" id="message" placeholder="Message"></textarea>
-                                            </fieldset>
-                                            <fieldset class="col-md-12">
-                                                <input type="submit" name="send" value="Send Message" id="submit" class="button">
-                                            </fieldset>
-                                        </form>
-                                    </div> <!-- /.row -->
-                                </div> <!-- /.contact-form -->
-                            </div> <!-- /.col-md-12 -->
-                        </div> <!-- /.row -->
-                    </div> <!-- /.contact -->
 
                 </div> <!-- /#menu-container -->
 

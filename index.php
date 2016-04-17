@@ -15,6 +15,11 @@ $smarty = new Smarty;
 $bookService = new BookService();
 
 $books = $bookService->GetAllBookEntities();
+$bookArray = array();
+foreach($books as $book){
+    $bookArray[] = $book->toArray();
+}
+$_SESSION["books"] = $bookArray ;
 
 $smarty->display("views/index.tpl");
 
