@@ -22,4 +22,15 @@ class BookService implements IBookService
         }
         return $books;
     }
+
+    public function UpdateBook($book)
+    {
+        $this->client->UpdateBook(array("book"=>$book));
+    }
+
+    public function GetBookById($id)
+    {
+        $responce = $this->client->GetBookById(array("id"=>$id));
+        return new Book($responce->GetBookByIdResult);
+    }
 }

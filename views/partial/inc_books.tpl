@@ -4,7 +4,7 @@
         <div class="col-md-4 col-ms-6">
             <div class="g-item">
                 <img src="{$book["UrlPicture"]}" alt="">
-                <a class="overlay" href="#" data-toggle="modal" data-target="#modalBook{$book["Id"]}">
+                <a class="overlay" href="#" data-toggle="modal" data-target="#modalBook{$book["Id"]}" onclick="fillCommentByBookId({$book["Id"]})">
                     <span>{$book["BookName"]}</span>
                 </a>
             </div> <!-- /.g-item -->

@@ -11,6 +11,7 @@ namespace Entities {
         private $NumberOfDownloads;
         private $Rating;
         private $NumberOfLikes;
+        private $Description;
 
         public function __construct($params = array())
         {
@@ -141,6 +142,24 @@ namespace Entities {
         {
             $this->NumberOfLikes = $NumberOfLikes;
         }
+
+        /**
+         * @return mixed
+         */
+        public function getDescription()
+        {
+            return $this->Description;
+        }
+
+        /**
+         * @param mixed $Description
+         */
+        public function setDescription($Description)
+        {
+            $this->Description = $Description;
+        }
+
+
 
     }
 }

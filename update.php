@@ -17,7 +17,7 @@ if(isset($_REQUEST["btn_suggest"])){
     $suggestService = new SuggestService();
     $suggest = new \Entities\Proposal();
     $suggest->setMessage($_REQUEST["message"]);
-    $date = new DateTime(date('Y-m-d'));
+    $date = new DateTime(date('Y-m-d H:i:s'));
     $suggest->setDatePublication($date->format("c"));
     $user = unserialize($_SESSION["user"]);
     $suggest->setUserId($user->getId());

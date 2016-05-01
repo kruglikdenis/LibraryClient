@@ -41,3 +41,58 @@ $("#btnRegister").click(function(){
         }
     });
 });
+
+
+function addComment(bookId){
+    var request = $.ajax({
+        method: "POST",
+        dataType: "json",
+        url: 'option_fill.php',
+        data: "action=createComment&controller=CommentController&bookId=" + bookId+"&text=" + $('#comment_'+bookId).val(),
+        success: function(data){
+            fillCommentByBookId(bookId);
+        }
+    });
+}
+
+
+function fillCommentByBookId(bookId){
+    var request = $.ajax({
+        method: "POST",
+        dataType: "json",
+        url: 'option_fill.php',
+        data: "action=getCommentByBook&controller=CommentController&bookId=" + bookId,
+        success: function(data){
+            var $div = $('#divComments_'+bookId);
+            $div.empty();
+            $.each(data.data,function(index,item){
+                $div.append('<p>'+item.Text+'</p>');
+            });
+        }
+    });
+}
+
+function incDownloadsBook(bookId){
+    var request = $.ajax({
+        method: "POST",
+        dataType: "json",
+        url: 'option_fill.php',
+        data: "action=incDownloads&controller=BookController&id=" + bookId,
+        success: function(data){
+        }
+    });
+}
+
+
+function setRating(bookId, rating){
+    $.ajax({
+        method: "POST",
+        dataType: "json",
+        url: 'option_fill.php',
+        data: "action=setRating&controller=LibraryCardController&bookId=" + bookId+'&rating='+rating,
+        success: function(data){
+            $('#reviewStars-input').hide();
+            $('#isLikeBook').show();
+        }
+    });
+}
