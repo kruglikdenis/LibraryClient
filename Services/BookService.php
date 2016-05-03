@@ -17,8 +17,12 @@ class BookService implements IBookService
     {
         $responce = $this->client->GetAllBookEntities();
         $books = array();
-        foreach($responce->GetAllBookEntitiesResult->BookEntity as $book){
-            $books[] = new Book($book);
+        if(is_array($responce->GetAllBookEntitiesResult->BookEntity)){
+            foreach($responce->GetAllBookEntitiesResult->BookEntity as $book){
+                $books[] = new Book($book);
+            }
+        }else{
+            $books[] = new Book($responce->GetAllBookEntitiesResult->BookEntity);
         }
         return $books;
     }
@@ -32,5 +36,19 @@ class BookService implements IBookService
     {
         $responce = $this->client->GetBookById(array("id"=>$id));
         return new Book($responce->GetBookByIdResult);
+    }
+
+    public function SearchBook($bookName)
+    {
+        $responce = $this->client->SearchBook(array("searchbook"=>$bookName));
+        $books = array();
+        if(is_array($responce->SearchBookResult->BookEntity)){
+            foreach($responce->SearchBookResult->BookEntity as $book){
+                $books[] = new Book($book);
+            }
+        }else{
+            $books[] = new Book($responce->SearchBookResult->BookEntity);
+        }
+        return $books;
     }
 }

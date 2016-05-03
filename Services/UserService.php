@@ -28,4 +28,11 @@ class UserService implements IUserService
         var_dump( $responce);
 
     }
+
+    public function GetUserById($id)
+    {
+        $responce = $this->client->GetUserById(["id"=>$id]);
+        return (isset($responce->GetUserByIdResult)) ?
+            new User($responce->GetUserByIdResult) : null;
+    }
 }

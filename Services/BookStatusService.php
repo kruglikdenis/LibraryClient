@@ -3,7 +3,9 @@
 require_once ("Interfaces/IBookStatusService.php");
 require_once ("SoapService.php");
 
-class BookStatusService
+use Entities\BookStatus;
+
+class BookStatusService implements IBookStatusService
 {
 
     private $client;
@@ -13,14 +15,15 @@ class BookStatusService
         $this->client = SoapService::create("BookStatus");
     }
 
-    public function GetAllBookEntities()
+    public function GetAllBookStatusEntities()
     {
-        $responce = $this->client->GetAllBookEntities();
-        $books = array();
-        foreach($responce->GetAllBookEntitiesResult->BookEntity as $book){
-            $books[] = new Book($book);
+        $responce = $this->client->GetAllBookStatusEntities();
+        $booksStatuses = array();
+        foreach($responce->GetAllBookStatusEntitiesResult->BookStatusEntity as $bookStatus){
+            $booksStatuses[] = new BookStatus($bookStatus);
         }
-        return $books;
+        return $booksStatuses;
     }
+
 
 }

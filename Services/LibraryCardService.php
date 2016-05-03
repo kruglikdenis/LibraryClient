@@ -4,6 +4,8 @@ require_once ("Interfaces/ILibraryCardService.php");
 require_once ("SoapService.php");
 
 use Entities\LibraryCard;
+use Entities\Book;
+
 class LibraryCardService implements ILibraryCardService
 {
 
@@ -19,8 +21,12 @@ class LibraryCardService implements ILibraryCardService
         $responce = $this->client->GetAllLibraryCardEntities();
         $libraryCards = array();
         if(isset($responce->GetAllLibraryCardEntitiesResult->LibraryCardEntity)){
-            foreach($responce->GetAllLibraryCardEntitiesResult as $libraryCard){
-                $libraryCards[] = new LibraryCard($libraryCard);
+            if(is_array($responce->GetAllLibraryCardEntitiesResult->LibraryCardEntity)){
+                foreach($responce->GetAllLibraryCardEntitiesResult->LibraryCardEntity as $libraryCard){
+                    $libraryCards[] = new LibraryCard($libraryCard);
+                }
+            }else{
+                $libraryCards[] = new LibraryCard($responce->GetAllLibraryCardEntitiesResult->LibraryCardEntity);
             }
         }
         return $libraryCards;
@@ -34,5 +40,21 @@ class LibraryCardService implements ILibraryCardService
     public function CreateLibraryCard($libraryCard)
     {
         $this->client->CreateLibraryCard(array("libraryCard"=>$libraryCard));
+    }
+
+    public function GetBookByStatus($bookStatus)
+    {
+        $responce = $this->client->GetBookByStatus(array("bookStatus"=>$bookStatus));
+        $books = array();
+        if(isset($responce->GetBookByStatusResult->BookEntity)){
+            if(is_array($responce->GetBookByStatusResult->BookEntity)){
+                foreach($responce->GetBookByStatusResult->BookEntity as $book){
+                    $books[] = new Book($book);
+                }
+            }else{
+                $books[] = new Book($responce->GetBookByStatusResult->BookEntity);
+            }
+        }
+        return $books;
     }
 }

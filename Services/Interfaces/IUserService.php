@@ -9,4 +9,5 @@ interface IUserService
 {
     public function GetUserByLoginAndPassword($login, $password);
     public function Create(User $user);
+    public function GetUserById($id);
 }

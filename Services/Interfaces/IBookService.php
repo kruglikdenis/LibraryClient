@@ -9,4 +9,6 @@ interface IBookService{
 
     public function GetBookById($id);
 
+    public function SearchBook($bookName);
+
 }

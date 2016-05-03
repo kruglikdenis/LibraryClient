@@ -23,6 +23,15 @@ namespace Entities {
             }
         }
 
+        public function toArray(){
+            $properties = get_object_vars($this);
+            $arr = array();
+            foreach($properties as $keyProperty => $property){
+                $arr[$keyProperty] = $property;
+            }
+            return $arr;
+        }
+
         public function getObjectVars(){
             return get_object_vars($this);
         }

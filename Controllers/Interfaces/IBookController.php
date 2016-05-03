@@ -10,4 +10,6 @@ interface IBookController
 
     public function incDownloads();
 
+    public function searchBook();
+
 }

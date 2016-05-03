@@ -1,6 +1,7 @@
 <?php
 
 require_once(__DIR__."/../Services/CommentService.php");
+require_once(__DIR__."/../Services/UserService.php");
 require_once (__DIR__."/Interfaces/ICommentController.php");
 require_once (__DIR__."/../Entities/Comment.php");
 require_once (__DIR__."/../Entities/Book.php");
@@ -12,10 +13,12 @@ class CommentController implements ICommentController
 {
 
     private $commentService;
+    private $userService;
 
     public function __construct()
     {
         $this->commentService = new CommentService();
+        $this->userService = new UserService();
     }
 
     public function createComment()
@@ -37,7 +40,9 @@ class CommentController implements ICommentController
         $comments = $this->commentService->getCommentByBook($book);
         $commentsArr = array();
         foreach($comments as $comment){
-            $commentsArr[] = $comment->toArray();
+            $commentsArr[$comment->getId()] = $comment->toArray();
+            $user = $this->userService->GetUserById($comment->getUserId());
+            $commentsArr[$comment->getId()] = array_merge($commentsArr[$comment->getId()], $user->toArray());
         }
         echo json_encode(array("data"=>$commentsArr));
     }

@@ -24,9 +24,16 @@ class CommentService implements ICommentService
     {
         $responce = $this->client->GetCommentByBook(array("book"=>$book));
         $comments = array();
-        foreach($responce->GetCommentByBookResult->CommentEntity as $comment){
-            $comments[] = new Comment($comment);
+        if(isset($responce->GetCommentByBookResult->CommentEntity)){
+            if(is_array($responce->GetCommentByBookResult->CommentEntity)){
+                foreach($responce->GetCommentByBookResult->CommentEntity as $comment){
+                    $comments[] = new Comment($comment);
+                }
+            }else{
+                $comments[] = new Comment($responce->GetCommentByBookResult->CommentEntity);
+            }
         }
+
         return $comments;
     }
 }

@@ -4,6 +4,6 @@
 interface IBookStatusService
 {
 
-    public function GetAllBookStatus();
+    public function GetAllBookStatusEntities();
 
 }
